@@ -10,7 +10,7 @@ import threading
 
 # <@U0216GLKBTR> my id
 # <@U021TGL7FV2> bot id
-client = slack.WebClient(token='xoxb-2055336641954-2061564253988-NdPCQEGjlIos29p3ljgkpimT')
+client = slack.WebClient(token='xoxb-2055336641954-2061564253988-s5AyyYoDnjpHPt0y6DbfXYXk')
 #client = slack.WebClient(token='xoxp-2055336641954-2040564657943-2048421007543-a6b5ca53ebd029bd187ea755b4b5c8d0')
 
 test_id = "C022B45ANL8"
@@ -96,8 +96,12 @@ def process(path):
     print(path)
     if path == "joke":
         client.chat_postMessage(channel=gen_id, text=get_dad_joke())
-    if path == "timer":
-        x = threading.Thread(target=run_timer, args=(40,))
+    elif path == "agar":
+        client.chat_postMessage(channel=gen_id, text="https://agar.io/")
+    elif path == "jspaint":
+        client.chat_postMessage(channel=gen_id, text="https://jspaint.app/")
+    elif path == "timer":
+        x = threading.Thread(target=run_timer, args=(90,))
         x.start()
     return True
 
