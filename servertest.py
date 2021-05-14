@@ -10,8 +10,7 @@ import threading
 
 # <@U0216GLKBTR> my id
 # <@U021TGL7FV2> bot id
-client = slack.WebClient(token='xoxb-2055336641954-2061564253988-s5AyyYoDnjpHPt0y6DbfXYXk')
-#client = slack.WebClient(token='xoxp-2055336641954-2040564657943-2048421007543-a6b5ca53ebd029bd187ea755b4b5c8d0')
+client = slack.WebClient(token='bot_token')
 
 test_id = "C022B45ANL8"
 gen_id = "C021TENLBLL"
