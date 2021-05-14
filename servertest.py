@@ -10,7 +10,8 @@ import threading
 
 # <@U0216GLKBTR> my id
 # <@U021TGL7FV2> bot id
-client = slack.WebClient(token='bot_token')
+client = slack.WebClient(token='xoxb-2055336641954-2061564253988-ObJXQamuq1YSqxao9gqs3y1X')
+#client = slack.WebClient(token='xoxp-2055336641954-2040564657943-2048421007543-a6b5ca53ebd029bd187ea755b4b5c8d0')
 
 test_id = "C022B45ANL8"
 gen_id = "C021TENLBLL"
@@ -92,6 +93,7 @@ def run_timer(timer_amn):
 
 @route('/<path>',method = 'POST')
 def process(path):
+    #path = "joke"
     print(path)
     if path == "joke":
         client.chat_postMessage(channel=gen_id, text=get_dad_joke())
@@ -102,7 +104,7 @@ def process(path):
     elif path == "timer":
         x = threading.Thread(target=run_timer, args=(90,))
         x.start()
-    return True
+    return response
 
 # ngrok http 8080
 run(host='localhost', port=8080)
